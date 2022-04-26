@@ -10,9 +10,7 @@
         woody,
         scoper,  % should be before any scoper event handler usage
         machinery,
-        erl_health,
-        prometheus,
-        prometheus_cowboy
+        erl_health
     ]},
     {mod, {bender, []}},
     {env, []}
