@@ -22,7 +22,7 @@
 
 -define(CONFIG(Key, C), (element(2, lists:keyfind(Key, 1, C)))).
 
--spec all() -> [atom()].
+-spec all() -> [test_case_name() | {group, group_name()}].
 all() ->
     [
         {group, main}
@@ -76,7 +76,7 @@ init_per_testcase(_Name, C) ->
     Client = generator_client:new(),
     [{client, Client} | C].
 
--spec end_per_testcase(atom(), config()) -> config().
+-spec end_per_testcase(atom(), config()) -> ok.
 end_per_testcase(_Name, _C) ->
     ok.
 
