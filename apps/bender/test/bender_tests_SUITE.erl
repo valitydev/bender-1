@@ -29,7 +29,7 @@
 
 -define(CONFIG(Key, C), (element(2, lists:keyfind(Key, 1, C)))).
 
--spec all() -> [atom()].
+-spec all() -> [test_case_name() | {group, group_name()}].
 all() ->
     [
         {group, main},
@@ -109,7 +109,7 @@ init_per_testcase(_Name, C) ->
     Client = bender_client:new(),
     [{client, Client} | C].
 
--spec end_per_testcase(atom(), config()) -> config().
+-spec end_per_testcase(atom(), config()) -> ok.
 end_per_testcase(_Name, _C) ->
     ok.
 
@@ -238,7 +238,8 @@ generator_init(_C) ->
             max_connections => 10000
         }
     },
-    {ok, _Result} = woody_client:call(Call, Options).
+    {ok, _Result} = woody_client:call(Call, Options),
+    ok.
 
 -spec retrieve_unknown_id(config()) -> ok.
 retrieve_unknown_id(C) ->

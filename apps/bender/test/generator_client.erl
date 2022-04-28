@@ -7,7 +7,7 @@
 
 -type schema() :: bender_thrift:'GenerationSchema'().
 
--define(RETRY_STATEGY, {linear, 5, 1000}).
+-define(RETRY_STATEGY, genlib_retry:linear(5, 1000)).
 
 %%% API
 

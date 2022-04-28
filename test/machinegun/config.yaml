@@ -8,10 +8,14 @@ namespaces:
         processor:
             url: http://bender:8022/v1/stateproc/bender_generator
             pool_size: 500
+        worker:
+            message_queue_len_limit: 1000
     bender_sequence:
         processor:
             url: http://bender:8022/v1/stateproc/bender_sequence
             pool_size: 500
+        worker:
+            message_queue_len_limit: 1000
 
 storage:
     type: memory
