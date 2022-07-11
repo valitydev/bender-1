@@ -1,7 +1,5 @@
 -module(generator_tests_SUITE).
 
--include_lib("common_test/include/ct.hrl").
-
 -export([all/0]).
 -export([groups/0]).
 -export([init_per_suite/1]).
@@ -14,7 +12,7 @@
 -export([sequence_minimum/1]).
 -export([snowflake/1]).
 
--include_lib("bender_proto/include/bender_thrift.hrl").
+-include_lib("bender_proto/include/bender_bender_thrift.hrl").
 
 -type config() :: [{atom(), term()}].
 -type group_name() :: atom().

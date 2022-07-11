@@ -6,7 +6,7 @@
 
 -export([handle_function/4]).
 
--include_lib("bender_proto/include/bender_thrift.hrl").
+-include_lib("bender_proto/include/bender_bender_thrift.hrl").
 
 -include("bender_internal.hrl").
 
