@@ -5,7 +5,7 @@
 
 -type client() :: woody_context:ctx().
 
--type schema() :: bender_thrift:'GenerationSchema'().
+-type schema() :: bender_bender_thrift:'GenerationSchema'().
 
 -define(RETRY_STATEGY, genlib_retry:linear(5, 1000)).
 
@@ -23,7 +23,7 @@ generate_id(Schema, Client) ->
 
 -spec call(atom(), tuple(), client()) -> woody:result() | no_return().
 call(Function, Args, Client) ->
-    Call = {{bender_thrift, 'Generator'}, Function, Args},
+    Call = {{bender_bender_thrift, 'Generator'}, Function, Args},
     Opts = #{
         url => <<"http://bender:8022/v1/generator">>,
         event_handler => scoper_woody_event_handler,

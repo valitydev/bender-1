@@ -91,11 +91,11 @@ get_handler_spec() ->
     GeneratorPath = maps:get(generator_path, Generator, <<"/v1/generator">>),
     [
         {BenderPath, {
-            {bender_thrift, 'Bender'},
+            {bender_bender_thrift, 'Bender'},
             bender_handler
         }},
         {GeneratorPath, {
-            {bender_thrift, 'Generator'},
+            {bender_bender_thrift, 'Generator'},
             generator_handler
         }}
     ].
