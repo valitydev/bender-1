@@ -15,7 +15,7 @@ jobs:
   build-push:
     runs-on: ubuntu-latest
     steps:
-      - uses: valitydev/action-deploy-docker@v2
+      - uses: valitydev/action-deploy-docker@80d688fb91aa2424bb63574228f027e719e7c7b7
         with:
           registry-username: ${{ github.actor }}
           registry-access-token: ${{ secrets.GITHUB_TOKEN }}
