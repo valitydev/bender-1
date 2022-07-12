@@ -19,7 +19,7 @@
 -type internal_id() :: binary() | {binary(), pos_integer()}.
 
 -type schema() :: bender:schema().
--type user_context() :: msgpack_thrift:'Value'() | undefined.
+-type user_context() :: msgp_msgpack_thrift:'Value'() | undefined.
 -type state() :: #{
     internal_id := internal_id(),
     user_context := user_context()

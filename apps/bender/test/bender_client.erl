@@ -6,9 +6,9 @@
 
 -type client() :: woody_context:ctx().
 
--type external_id() :: bender_thrift:'ExternalID'().
--type schema() :: bender_thrift:'GenerationSchema'().
--type user_context() :: msgpack_thrift:'Value'().
+-type external_id() :: bender_bender_thrift:'ExternalID'().
+-type schema() :: bender_bender_thrift:'GenerationSchema'().
+-type user_context() :: msgp_msgpack_thrift:'Value'().
 
 -define(RETRY_STATEGY, genlib_retry:linear(5, 1000)).
 
@@ -30,7 +30,7 @@ get_internal_id(ExternalID, Client) ->
 
 -spec call(atom(), tuple(), client()) -> woody:result() | no_return().
 call(Function, Args, Client) ->
-    Call = {{bender_thrift, 'Bender'}, Function, Args},
+    Call = {{bender_bender_thrift, 'Bender'}, Function, Args},
     Opts = #{
         url => <<"http://bender:8022/v1/bender">>,
         event_handler => scoper_woody_event_handler,

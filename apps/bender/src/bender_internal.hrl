@@ -2,7 +2,7 @@
 -define(__BENDER_INTERNAL_HRL__, included).
 
 -record(constant, {
-    internal_id :: bender_thrift:'InternalID'()
+    internal_id :: bender_bender_thrift:'InternalID'()
 }).
 
 -record(sequence, {

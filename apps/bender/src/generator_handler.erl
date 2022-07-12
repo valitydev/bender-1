@@ -13,7 +13,7 @@
 -type woody_context() :: woody_context:ctx().
 
 -type schema() :: bender:schema().
--type generate_id_result() :: bender_thrift:'GeneratedID'().
+-type generate_id_result() :: bender_bender_thrift:'GeneratedID'().
 
 -spec handle_function(woody:func(), woody:args(), woody_context(), woody:options()) -> {ok, woody:result()}.
 handle_function(Func, Args, WoodyCtx, Opts) ->
@@ -26,7 +26,8 @@ handle_function(Func, Args, WoodyCtx, Opts) ->
 handle_function_('GenerateID', {Schema}, WoodyCtx, _Opts) ->
     generate_id(Schema, WoodyCtx).
 
--spec generate_id(bender_thrift:'GenerationSchema'(), woody_context()) -> {ok, generate_id_result()} | no_return().
+-spec generate_id(bender_bender_thrift:'GenerationSchema'(), woody_context()) ->
+    {ok, generate_id_result()} | no_return().
 generate_id({constant, #bender_ConstantSchema{} = Schema}, WoodyCtx) ->
     NewInternalID = Schema#bender_ConstantSchema.internal_id,
     Constant = #constant{internal_id = NewInternalID},

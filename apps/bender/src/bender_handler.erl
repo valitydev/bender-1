@@ -12,11 +12,11 @@
 
 -type woody_context() :: woody_context:ctx().
 
--type external_id() :: bender_thrift:'ExternalID'().
+-type external_id() :: bender_bender_thrift:'ExternalID'().
 -type schema() :: bender:schema().
--type user_context() :: msgpack_thrift:'Value'().
--type generate_id_result() :: bender_thrift:'GenerationResult'().
--type get_internal_id_result() :: bender_thrift:'GetInternalIDResult'().
+-type user_context() :: msgp_msgpack_thrift:'Value'().
+-type generate_id_result() :: bender_bender_thrift:'GenerationResult'().
+-type get_internal_id_result() :: bender_bender_thrift:'GetInternalIDResult'().
 
 -spec handle_function(woody:func(), woody:args(), woody_context(), woody:options()) -> {ok, woody:result()}.
 handle_function(Func, Args, WoodyCtx, Opts) ->
@@ -37,7 +37,7 @@ handle_function_('GetInternalID', {ExternalID}, WoodyCtx, _Opts) ->
     }),
     get_internal_id(ExternalID, WoodyCtx).
 
--spec generate_id(external_id(), bender_thrift:'GenerationSchema'(), user_context(), woody_context()) ->
+-spec generate_id(external_id(), bender_bender_thrift:'GenerationSchema'(), user_context(), woody_context()) ->
     {ok, generate_id_result()} | no_return().
 generate_id(ExternalID, {constant, #bender_ConstantSchema{} = Schema}, UserCtx, WoodyCtx) ->
     NewInternalID = Schema#bender_ConstantSchema.internal_id,
