@@ -40,7 +40,8 @@ RUN echo "#!/bin/sh" >> /entrypoint.sh && \
     chmod +x /entrypoint.sh
 
 # Setup user
-RUN groupadd --gid ${USER_GID} ${SERVICE_NAME} && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${SERVICE_NAME}
+RUN groupadd --gid ${USER_GID} ${SERVICE_NAME} && \
+    useradd --uid ${USER_UID} --gid ${USER_GID} -M ${SERVICE_NAME}
 USER ${SERVICE_NAME}
 
 ENTRYPOINT []
