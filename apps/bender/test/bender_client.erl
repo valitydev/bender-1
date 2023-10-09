@@ -33,7 +33,7 @@ call(Function, Args, Client) ->
     Call = {{bender_bender_thrift, 'Bender'}, Function, Args},
     Opts = #{
         url => <<"http://bender:8022/v1/bender">>,
-        event_handler => scoper_woody_event_handler,
+        event_handler => bender_woody_event_handler,
         transport_opts => #{
             max_connections => 10000
         }

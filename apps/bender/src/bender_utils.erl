@@ -47,5 +47,5 @@ get_woody_client(#{url := Url} = Automaton) ->
 -spec get_woody_event_handlers() -> woody:ev_handlers().
 get_woody_event_handlers() ->
     genlib_app:env(bender, woody_event_handlers, [
-        scoper_woody_event_handler
+        bender_woody_event_handler
     ]).

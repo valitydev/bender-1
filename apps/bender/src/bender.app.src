@@ -12,7 +12,10 @@
         machinery,
         prometheus,
         prometheus_cowboy,
-        erl_health
+        erl_health,
+        opentelemetry_api,
+        opentelemetry_exporter,
+        opentelemetry
     ]},
     {mod, {bender, []}},
     {env, []}

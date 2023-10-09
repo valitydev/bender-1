@@ -73,7 +73,7 @@ init_per_suite(C) ->
             path => <<"/v1/stateproc/bender_generator">>,
             schema => machinery_mg_schema_generic,
             url => <<"http://machinegun:8022/v1/automaton">>,
-            event_handler => scoper_woody_event_handler,
+            event_handler => bender_woody_event_handler,
             transport_opts => #{
                 max_connections => 1000
             }
@@ -82,7 +82,7 @@ init_per_suite(C) ->
             path => <<"/v1/stateproc/bender_sequence">>,
             schema => machinery_mg_schema_generic,
             url => <<"http://machinegun:8022/v1/automaton">>,
-            event_handler => scoper_woody_event_handler,
+            event_handler => bender_woody_event_handler,
             transport_opts => #{
                 max_connections => 1000
             }
@@ -230,7 +230,7 @@ generator_init(_C) ->
     Call = {{mg_proto_state_processing_thrift, 'Processor'}, 'ProcessSignal', {Request}},
     Options = #{
         url => <<"http://localhost:8022/v1/stateproc/bender_generator">>,
-        event_handler => scoper_woody_event_handler,
+        event_handler => bender_woody_event_handler,
         transport_opts => #{
             checkout_timeout => 1000,
             max_connections => 10000
