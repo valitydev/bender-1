@@ -50,7 +50,7 @@ init_per_suite(C) ->
                     path => <<"/v1/stateproc/bender_sequence">>,
                     schema => machinery_mg_schema_generic,
                     url => <<"http://machinegun:8022/v1/automaton">>,
-                    event_handler => bender_woody_event_handler,
+                    event_handler => scoper_woody_event_handler,
                     transport_opts => #{
                         max_connections => 1000
                     }
