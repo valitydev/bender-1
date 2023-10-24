@@ -17,13 +17,13 @@ services:
     command: /sbin/init
 
   machinegun:
-    image: ghcr.io/valitydev/machinegun:sha-7f0a21a
+    image: ghcr.io/valitydev/machinegun:sha-5c0db56
     command: /opt/machinegun/bin/machinegun foreground
     volumes:
       - ./test/machinegun/config.yaml:/opt/machinegun/etc/config.yaml
       - ./test/machinegun/cookie:/opt/machinegun/etc/cookie
     healthcheck:
       test: "/opt/machinegun/bin/machinegun ping"
-      interval: 5s
-      timeout: 1s
-      retries: 20
+      interval: 10s
+      timeout: 5s
+      retries: 10
