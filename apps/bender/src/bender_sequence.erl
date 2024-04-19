@@ -14,6 +14,7 @@
 -export([process_call/4]).
 -export([process_timeout/3]).
 -export([process_repair/4]).
+-export([process_notification/4]).
 
 -type id() :: binary().
 -type minimum() :: integer() | undefined.
@@ -98,6 +99,10 @@ process_timeout(_Machine, _HandlerArgs, _HandlerOpts) ->
 -spec process_repair(args(_), machine(), handler_args(), handler_opts()) -> no_return().
 process_repair(_Args, _Machine, _HandlerArgs, _HandlerOpts) ->
     not_implemented(repair).
+
+-spec process_notification(args(_), machine(), handler_args(), handler_opts()) -> no_return().
+process_notification(_Args, _Machine, _HandlerArgs, _HandlerOpts) ->
+    not_implemented(notification).
 
 %%% Internal functions
 
