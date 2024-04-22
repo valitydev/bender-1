@@ -7,11 +7,11 @@
         stdlib,
         snowflake,
         bender_proto,
-        woody,
-        scoper,  % should be before any scoper event handler usage
-        machinery,
         prometheus,
         prometheus_cowboy,
+        woody, % woody's hackney declares prometheus metrics on start
+        scoper, % should be before any scoper event handler usage
+        machinery,
         erl_health,
         opentelemetry_api,
         opentelemetry_exporter,
